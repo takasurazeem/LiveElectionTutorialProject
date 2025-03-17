@@ -109,7 +109,8 @@ struct CircleImage: View {
     let imageName: String?
     let bgColor: Color
     let textColor: Color = .white
-    let size: CGSize = .init(width: 40, height: 40)
+    var size: CGSize = .init(width: 40, height: 40)
+    var font: Font = .title2
     var body: some View {
         Group {
             if let imageName {
@@ -120,7 +121,7 @@ struct CircleImage: View {
                     .overlay {
                         Text(candidateName.first!.uppercased())
                             .fontDesign(.rounded)
-                            .font(.title2)
+                            .font(font)
                             .fontWeight(.bold)
                             .foregroundStyle(textColor)
                     }
