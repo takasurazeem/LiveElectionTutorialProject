@@ -58,6 +58,15 @@
 			);
 			target = F986EB3D2D88481B0035B1C1 /* MyWidgetExtension */;
 		};
+		F986EB5D2D8848780035B1C1 /* Exceptions for "Shared" folder in "MyWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/Election.swift,
+				Models/ElectionWidgetAttributes.swift,
+				Views/ElectionView.swift,
+			);
+			target = F986EB3D2D88481B0035B1C1 /* MyWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +84,14 @@
 				F986EB542D88481C0035B1C1 /* Exceptions for "MyWidget" folder in "MyWidgetExtension" target */,
 			);
 			path = MyWidget;
+			sourceTree = "<group>";
+		};
+		F986EB562D8848600035B1C1 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F986EB5D2D8848780035B1C1 /* Exceptions for "Shared" folder in "MyWidgetExtension" target */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -102,6 +119,7 @@
 		F986EB1D2D88448C0035B1C1 = {
 			isa = PBXGroup;
 			children = (
+				F986EB562D8848600035B1C1 /* Shared */,
 				F986EB282D88448C0035B1C1 /* LiveElectionTutorialProject */,
 				F986EB442D88481B0035B1C1 /* MyWidget */,
 				F986EB3F2D88481B0035B1C1 /* Frameworks */,
@@ -146,6 +164,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F986EB282D88448C0035B1C1 /* LiveElectionTutorialProject */,
+				F986EB562D8848600035B1C1 /* Shared */,
 			);
 			name = LiveElectionTutorialProject;
 			packageProductDependencies = (
