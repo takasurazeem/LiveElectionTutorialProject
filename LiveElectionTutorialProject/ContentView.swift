@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var viewModel = ViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List(viewModel.elections) { election in
+                VStack(spacing: 8) {
+                    ElectionView(election: election)
+                    if let channelId = election.channelId, election.isLiveActivityRegistered == false {
+                        Button("Get Real-Time Live Activity Updates") {
+                            
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
+                }
+            }
+            .navigationTitle("Live Elections")
+            .onAppear {
+                
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(viewModel: ViewModel())
 }
