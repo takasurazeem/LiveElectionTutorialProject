@@ -22,3 +22,7 @@ xcuserdata/
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode
 
+*.log
+firebase.json
+.firebaserc
+/functions
