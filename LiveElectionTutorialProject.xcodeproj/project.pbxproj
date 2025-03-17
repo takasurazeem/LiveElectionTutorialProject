@@ -10,6 +10,7 @@
 		F986EB412D88481B0035B1C1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F986EB402D88481B0035B1C1 /* WidgetKit.framework */; };
 		F986EB432D88481B0035B1C1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F986EB422D88481B0035B1C1 /* SwiftUI.framework */; };
 		F986EB502D88481C0035B1C1 /* MyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F986EB3E2D88481B0035B1C1 /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F986EB702D88DC110035B1C1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F986EB6F2D88DC110035B1C1 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F986EB702D88DC110035B1C1 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +170,7 @@
 			);
 			name = LiveElectionTutorialProject;
 			packageProductDependencies = (
+				F986EB6F2D88DC110035B1C1 /* FirebaseFirestore */,
 			);
 			productName = LiveElectionTutorialProject;
 			productReference = F986EB262D88448C0035B1C1 /* LiveElectionTutorialProject.app */;
@@ -222,6 +225,9 @@
 			);
 			mainGroup = F986EB1D2D88448C0035B1C1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F986EB6E2D88DC110035B1C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F986EB272D88448C0035B1C1 /* Products */;
 			projectDirPath = "";
@@ -548,6 +554,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F986EB6E2D88DC110035B1C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F986EB6F2D88DC110035B1C1 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F986EB6E2D88DC110035B1C1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F986EB1E2D88448C0035B1C1 /* Project object */;
 }
