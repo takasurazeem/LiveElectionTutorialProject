@@ -42,4 +42,33 @@ import FirebaseFirestore
                 }
             }
     }
+    
+    func startLiveActivity(election: Election, channelId: String) {
+        guard ActivityAuthorizationInfo().frequentPushesEnabled else {
+            return
+        }
+        do {
+            let activityAttributes = ElectionWidgetAttributes(id: election.id)
+            let activity = try Activity.request(
+                attributes: activityAttributes,
+                content: .init(
+                    state: .init(
+                        aName: election.aName,
+                        bName: election.bName,
+                        aCount: election.aCount,
+                        bCount: election.bCount,
+                        aPercent: election.aPercent,
+                        bPercent: election.bPercent
+                    ),
+                    staleDate: nil
+                ),
+                pushType: .channel(channelId)
+            )
+            print("Requested a live activity \(String(describing: activity.id))")
+            guard let index = self.elections.firstIndex(of: election) else { return }
+            self.elections[index].isLiveActivityRegistered = true
+        } catch {
+            print("Error requesting live activity \(error.localizedDescription)")
+        }
+    }
 }

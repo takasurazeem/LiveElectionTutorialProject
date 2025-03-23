@@ -18,7 +18,7 @@ struct ContentView: View {
                     ElectionView(election: election)
                     if let channelId = election.channelId, election.isLiveActivityRegistered == false {
                         Button("Get Real-Time Live Activity Updates") {
-                            
+                            viewModel.startLiveActivity(election: election, channelId: channelId)
                         }
                         .buttonStyle(.borderedProminent)
                     }
